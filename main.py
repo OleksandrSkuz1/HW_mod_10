@@ -47,7 +47,7 @@ class Record:
             raise ValueError("Invalid phone number format")
 
 
-    def find_phone(self, phone):
+    def find_phone(self, phone: int):
         for p in self.phones:
             if p.value == phone:
                 return p  
@@ -61,11 +61,11 @@ class AddressBook(UserDict):
     def add_record(self, record):
         self.data[record.name.value] = record
 
-    def find(self, name):
+    def find(self, name: list):
         if name in self.data:
             return self.data[name]
 
-    def delete(self, name):
+    def delete(self, name: list):
         if name in self.data:
             del self.data[name]
 
